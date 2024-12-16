@@ -1,0 +1,5 @@
+type UserProfile @model @auth(rules: [{allow: owner, ownerField: "profileOwner"}])
+{
+  email: String
+  profileOwner: String
+}
