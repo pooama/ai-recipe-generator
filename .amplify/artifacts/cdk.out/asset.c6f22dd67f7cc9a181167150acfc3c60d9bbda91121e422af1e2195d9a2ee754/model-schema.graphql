@@ -1,0 +1,9 @@
+type BedrockResponse @aws_cognito_user_pools
+{
+  body: String
+  error: String
+}
+
+type Query {
+  askBedrock(ingredients: [String]): BedrockResponse @aws_cognito_user_pools
+}

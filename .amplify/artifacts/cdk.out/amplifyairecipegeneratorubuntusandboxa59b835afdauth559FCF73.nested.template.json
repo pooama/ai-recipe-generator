@@ -18,13 +18,8 @@
     "AutoVerifiedAttributes": [
      "email"
     ],
-    "EmailVerificationMessage": "The verification code to your new account is {####}",
-    "EmailVerificationSubject": "Verify your new account",
-    "LambdaConfig": {
-     "PostConfirmation": {
-      "Ref": "referencetoamplifyairecipegeneratorubuntusandboxa59b835afdfunctionNestedStackfunctionNestedStackResource2CC22B3BOutputsamplifyairecipegeneratorubuntusandboxa59b835afdfunctionpostconfirmationlambdaFF784B7CArn"
-     }
-    },
+    "EmailVerificationMessage": "Use this code to confirm your account: {####}",
+    "EmailVerificationSubject": "Welcome to the AI-Powered Recipe Generator!",
     "Policies": {
      "PasswordPolicy": {
       "MinimumLength": 8,
@@ -60,8 +55,8 @@
     },
     "VerificationMessageTemplate": {
      "DefaultEmailOption": "CONFIRM_WITH_CODE",
-     "EmailMessage": "The verification code to your new account is {####}",
-     "EmailSubject": "Verify your new account",
+     "EmailMessage": "Use this code to confirm your account: {####}",
+     "EmailSubject": "Welcome to the AI-Powered Recipe Generator!",
      "SmsMessage": "The verification code to your new account is {####}"
     }
    },
@@ -69,27 +64,6 @@
    "DeletionPolicy": "Delete",
    "Metadata": {
     "aws:cdk:path": "amplify-airecipegenerator-ubuntu-sandbox-a59b835afd/auth/amplifyAuth/UserPool/Resource"
-   }
-  },
-  "amplifyAuthUserPoolPostConfirmationCognitoE7E727CF": {
-   "Type": "AWS::Lambda::Permission",
-   "Properties": {
-    "Action": "lambda:InvokeFunction",
-    "FunctionName": {
-     "Ref": "referencetoamplifyairecipegeneratorubuntusandboxa59b835afdfunctionNestedStackfunctionNestedStackResource2CC22B3BOutputsamplifyairecipegeneratorubuntusandboxa59b835afdfunctionpostconfirmationlambdaFF784B7CArn"
-    },
-    "Principal": "cognito-idp.amazonaws.com",
-    "SourceArn": {
-     "Fn::GetAtt": [
-      "amplifyAuthUserPool4BA7F805",
-      "Arn"
-     ]
-    }
-   },
-   "UpdateReplacePolicy": "Delete",
-   "DeletionPolicy": "Delete",
-   "Metadata": {
-    "aws:cdk:path": "amplify-airecipegenerator-ubuntu-sandbox-a59b835afd/auth/amplifyAuth/UserPool/PostConfirmationCognito"
    }
   },
   "amplifyAuthUserPoolAppClient2626C6F8": {
@@ -327,7 +301,7 @@
   "CDKMetadata": {
    "Type": "AWS::CDK::Metadata",
    "Properties": {
-    "Analytics": "v2:deflate64:H4sIAAAAAAAA/01PywrCMBD8Fu/pSvSgHqUnL1IqniVNVt02yUKTKlL676aUak8zOw+G3YDcbUGu1Dtk2jSZpQr6M4aI5hKVbkQybr3mh6fI0F8DtgWzFfnd//hMckvo49L6KyeTCMXPXF7eJVs8xrT2dEkchFWuMgpSqsDWUQjEXpBy0I/JsT3iMIgSA3etnqQFz9kbiqk1CM8GoQ7rl9yDPKRH60CUtV0adwjlhF92K0tCBQEAAA=="
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/02PQQvCMAyFf4v3LlI9qEfZyYvIxLPUNmq2roG1U6T0v9sxpju9L+8lPLICuVmDXKi3L7RpCks3iEf0Ac05KN2IHFyj5oejwBAvHrsTsxXl3f14gtISujCP/s7BZKDwmY7nc8UW9yG3PdtsJkGqhTiYw+KgKYkKPfedHq0Zl+wMBWKXhGODUPvlS25B7vJPtScquj73tAjVqF+FUEQ38AAAAA=="
    },
    "Metadata": {
     "aws:cdk:path": "amplify-airecipegenerator-ubuntu-sandbox-a59b835afd/auth/CDKMetadata/Default"
@@ -601,11 +575,6 @@
    ]
   }
  },
- "Parameters": {
-  "referencetoamplifyairecipegeneratorubuntusandboxa59b835afdfunctionNestedStackfunctionNestedStackResource2CC22B3BOutputsamplifyairecipegeneratorubuntusandboxa59b835afdfunctionpostconfirmationlambdaFF784B7CArn": {
-   "Type": "String"
-  }
- },
  "Outputs": {
   "amplifyairecipegeneratorubuntusandboxa59b835afdauthamplifyAuthUserPool1B00E7D0Ref": {
    "Value": {
@@ -620,16 +589,6 @@
   "amplifyairecipegeneratorubuntusandboxa59b835afdauthamplifyAuthIdentityPool72D71C73Ref": {
    "Value": {
     "Ref": "amplifyAuthIdentityPool3FDE84CC"
-   }
-  },
-  "amplifyairecipegeneratorubuntusandboxa59b835afdauthamplifyAuthauthenticatedUserRole995D8CC5Ref": {
-   "Value": {
-    "Ref": "amplifyAuthauthenticatedUserRoleD8DA3689"
-   }
-  },
-  "amplifyairecipegeneratorubuntusandboxa59b835afdauthamplifyAuthunauthenticatedUserRole26AF33DBRef": {
-   "Value": {
-    "Ref": "amplifyAuthunauthenticatedUserRole2B524D9E"
    }
   }
  }
