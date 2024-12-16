@@ -5,3 +5,9 @@
 
 # Editor directories and files
 
+
+# amplify
+node_modules
+.amplify
+amplify_outputs*
+amplifyconfiguration*
